@@ -18,10 +18,10 @@ for (x = 48 ; x <= 57 ; x++)
 putchar (x);
 
 }
-for (y = 97 ; y <= 102 ; x++)
+for (y = 97 ; y <= 102 ; y++)
 {
 
-putchar (x);
+putchar (y);
 
 }
 putchar ('\n');
