@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include<stdio.h>
+
 /**
 * main - Entry point
 *
@@ -9,13 +10,13 @@
 
 int main(void)
 {
-	int ch = 97;
+	int i;
 
-	while (ch <= 122)
+	for (i = 0 ; i < 10 ; i++)
 	{
-		putchar (ch);
-		ch++;
+		putchar(i + 48);
 	}
-		putchar ('\n');
-	return (0);
+	putchar ('\n');
+
+return (0);
 }
