@@ -1,12 +1,12 @@
 #include "main.h"
 /**
-*_isalpha - shows 1 if the input is a
-*letter Another cases, shows 0
-*
-*@c: The character in ASCII code
-*
-*Return: 1 for lowercase character. 0 for the rest.
-*/
+ *_isalpha - shows 1 if the input is a
+ *letter Another cases, shows 0
+ *
+ *@c: The character in ASCII code
+ *
+ *Return: 1 for lowercase character. 0 for the rest.
+ */
 int _isalpha(int c)
 {
 
@@ -19,4 +19,5 @@ int _isalpha(int c)
 	{
 		return (0);
 	}
+	_putchar('\n');
 }
