@@ -7,10 +7,10 @@
  * @dest: 1st string.
  * @src: 2ed string.
  *
- * Returns: resulting string.
+ * Return: resturn to _strcat eesulting string.
  */
 char *_strcat(char *dest, char *src)
 {
-	strcat(dest,src);
+	strcat(dest, src);
 		return (dest);
 }
