@@ -6,7 +6,7 @@
  */
 char *rot13(char *n)
 {
-	char *p = str;
+	char *p = n;
 
 	while (*p != '\0')
 	{
@@ -20,6 +20,6 @@ char *rot13(char *n)
 		}
 		p++;
 	}
-	return (str);
+	return (n);
 
 }
