@@ -3,13 +3,14 @@
  * is_prime_number - print prime number.
  *
  * @n: int positive number.
+ * @other: number.
  * Return: 1 if the nummber is prime number
  * otherwise return 0.
  */
 int check(int n, int other);
 int is_prime_number(int n)
 {
-	return (check(n,2));
+	return (check(n, 2));
 
 }
 
