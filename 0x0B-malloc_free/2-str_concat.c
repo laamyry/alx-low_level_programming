@@ -24,12 +24,14 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (0);
 	}
+	n = 0;
 	m = 0;
 	if (s1)
 	{
-		for (n = 0; n < s1len; n++)
+		while ( n < s1len)
 		{
 			s[n] = s1[n];
+			n++;
 		}
 	}
 
