@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * tring_nconcat -concatenates two strings.
+ * string_nconcat -concatenates two strings.
  *
  * @n: interger.
  * @s1: string.
