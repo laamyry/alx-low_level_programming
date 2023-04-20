@@ -2,22 +2,39 @@
 /**
  * main - main function.
  *
- * @argc: number of lines arguments.
- * @argv: array of elements.
- * Return: 0
+ * @argc: argument's number.
+ * @argv: argument's array.
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
-	int n;
+
+	int m, n, res;
+	char i;
+	int (*ptr)(int, int);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+	m = atoi(argv[1]);
+	n = atoi(argv[3]);
+	ptr = get_op_func(argv[2]);
+	if (!ptr)
+	{
+		printf("Error\n");
+		exit(99);
+	}
 
-	n = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
-	printf("%d\n", n);
+	i = *argv[2];
+
+	if ((i == '/' || i == '%') && n == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	res = ptr(m, n);
+	printf("%d\n", res);
 	return (0);
 }
-
