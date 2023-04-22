@@ -67,10 +67,13 @@ void print_all(const char * const format, ...)
 	char *separate = "";
 
 	va_start(type_data, format);
-	for (m = 0; format && format[m]; m++)
+
+	m = 0;
+	while (format && format[m])
 	{
 
-		for (n = 0; types[n].compare; n++)
+		n = 0;
+		while (types[n].compare)
 		{
 			if (*(types[n].compare) == format[m])
 			{
@@ -79,7 +82,9 @@ void print_all(const char * const format, ...)
 				separate = ", ";
 				break;
 			}
+			n++;
 		}
+		m++;
 	}
 	printf("\n");
 	va_end(type_data);
