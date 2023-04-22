@@ -48,7 +48,7 @@ void print_float(va_list f)
 }
 
 /**
- * prin²_all - print's anything.
+ * print_all - print's anything.
  *
  * @format: string containing data.
  * Return: void.
