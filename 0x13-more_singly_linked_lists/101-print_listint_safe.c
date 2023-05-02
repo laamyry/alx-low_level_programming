@@ -2,21 +2,23 @@
 /**
  * print_listint_safe - prints a listint_t linked list.
  *
- * @head: firsst node.
+ * @head: first node.
  * Return: the number of nodes in the list.
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	long int dif;
-	size_t num;
 
-	for (num = 0; head; num++)
+	long int dif;
+	size_t num = 0;
+
+	for (; head != NULL; head = head->next)
 	{
 		dif = head - head->next;
+		num++;
 		printf("[%p] %d\n", (void *)head, head->n);
 		if (dif > 0)
 		{
-			head = head->next;
+			continue;
 		}
 		else
 		{
@@ -26,4 +28,4 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	return (num);
 
-}
+	}
