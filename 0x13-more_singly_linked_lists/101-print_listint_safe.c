@@ -8,24 +8,31 @@
 size_t print_listint_safe(const listint_t *head)
 {
 
-	long int dif;
-	size_t num = 0;
+	const listint_t *tmp = NULL, *leng = NULL;
+	size_t num = 0, new;
 
-	for (; head != NULL; head = head->next)
+	tmp = head;
+	while (tmp)
 	{
-		dif = head - head->next;
+		printf("[%p] %d\n", (void *)tmp, tmp->n);
 		num++;
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (dif > 0)
+		tmp = tmp->next;
+		leng = head;
+
+		for (new = 0; new < num; new++)
 		{
-			continue;
+			if (tmp == leng)
+			{
+				printf("-> [%p] %d\n", (void *)tmp, tmp->n);
+				return (num);
+			}
+			leng = leng->next;
 		}
-		else
+		if (!head)
 		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
+			exit(98);
 		}
 	}
 	return (num);
-
+	
 	}
