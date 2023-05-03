@@ -21,7 +21,7 @@ listint_t *find_listint_loop(listint_t *head)
 		n = n->next;
 		if (m == n)
 		{
-			for (n = head; n != m;n = n->next)
+			for (n = head; n != m; n = n->next)
 			{
 				m = m->next;
 			}
