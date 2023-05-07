@@ -10,12 +10,11 @@ unsigned long int _exp(unsigned int base, unsigned int exp)
 {
 
 	unsigned long int number;
-	unsigned int n = 1;
+	unsigned int n;
 
-	while (n <= exp)
+	for (n = 1; n <= exp; n++)
 	{
 		number *= base;
-		n++;
 	}
 	return (number);
 
