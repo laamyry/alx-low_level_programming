@@ -10,9 +10,9 @@ unsigned long int _exp(unsigned int base, unsigned int exp)
 {
 
 	unsigned long int number;
-	unsigned int n;
+	unsigned int m;
 
-	for (n = 1; n <= exp; n++)
+	for (m = 1; m <= exp; m++)
 	{
 		number *= base;
 	}
