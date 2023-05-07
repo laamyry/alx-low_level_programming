@@ -32,6 +32,9 @@ void print_binary(unsigned long int n)
 	unsigned long int m, res;
 	char f;
 
+	f = 0;
+	m = _exp(2, sizeof(unsigned long int) * 8 - 1);
+
 	for (; m != 0; m >>= 1)
 	{
 		res = n & m;
