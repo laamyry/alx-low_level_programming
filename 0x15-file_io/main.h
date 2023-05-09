@@ -1,6 +1,9 @@
 #ifndef _main_h
 #define _main_h
 
+#define MAXSIZE 1204
+#define SE STDERR_FILENO
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
