@@ -2,7 +2,7 @@
 /**
  * delete_dnodeint_at_index - deletes the node at index index
  * of a dlistint_t linked list.
- * 
+ *
  * @head: double pointer head.
  * @index: the index of the node.
  * Return: Returns: 1 if it succeeded, -1 if it failed
