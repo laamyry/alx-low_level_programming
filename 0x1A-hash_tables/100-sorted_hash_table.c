@@ -3,7 +3,6 @@
  * shash_table_create - Creates a sorted hash.
  *
  * @size: The size.
- *
  * Return: an error - NULL
  * Otherwise - a pointer.
  */
@@ -14,16 +13,11 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 	ht = malloc(sizeof(shash_table_t));
 	if (ht == NULL)
-	{
 		return (NULL);
-	}
-
 	ht->size = size;
 	ht->array = malloc(sizeof(shash_node_t *) * size);
 	if (ht->array == NULL)
-	{
 		return (NULL);
-	}
 	while (m < size)
 	{
 		ht->array[m] = NULL;
@@ -31,7 +25,6 @@ shash_table_t *shash_table_create(unsigned long int size)
 	}
 	ht->shead = NULL;
 	ht->stail = NULL;
-
 	return (ht);
 }
 
@@ -41,9 +34,8 @@ shash_table_t *shash_table_create(unsigned long int size)
  * @ht: A pointer.
  * @key: The key to add.
  * @value: The value key.
- *
  * Return: Upon failure - 0.
- *         Otherwise - 1.
+ * Otherwise - 1.
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
@@ -52,16 +44,12 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	unsigned long int idx;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
-	{
 		return (0);
-	}
-
 	value_c = strdup(value);
 	if (value_c == NULL)
 	{
 		return (0);
 	}
-
 	idx = key_index((const unsigned char *)key, ht->size);
 	temp = ht->shead;
 	while (temp)
@@ -74,7 +62,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		}
 		temp = temp->snext;
 	}
-
 	new = malloc(sizeof(shash_node_t));
 	if (new == NULL)
 	{
@@ -91,7 +78,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	new->value = value_c;
 	new->next = ht->array[idx];
 	ht->array[idx] = new;
-
 	if (ht->shead == NULL)
 	{
 		new->sprev = NULL;
@@ -119,13 +105,12 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			temp->snext->sprev = new;
 		temp->snext = new;
 	}
-
 	return (1);
 }
 
 /**
  * shash_table_get - Retrieve the value associated.
- * 
+ *
  * @ht: A pointer.
  * @key: The key.
  * Return: the key cannot be matched - NULL.
@@ -138,16 +123,14 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
-
 	idx = key_index((const unsigned char *)key, ht->size);
 	if (idx >= ht->size)
 	{
 		return (NULL);
 	}
-
-	for (node = ht->shead; node != NULL && strcmp(node->key, key) != 0; node = node->snext)
+	for (node = ht->shead; node != NULL && strcmp(node->key, key)
+	!= 0; node = node->snext)
 	;
-
 	return ((node == NULL) ? NULL : node->value);
 }
 
@@ -162,7 +145,6 @@ void shash_table_print(const shash_table_t *ht)
 
 	if (ht == NULL)
 		return;
-
 	node = ht->shead;
 	printf("{");
 	while (node != NULL)
@@ -188,7 +170,6 @@ void shash_table_print_rev(const shash_table_t *ht)
 	{
 		return;
 	}
-
 	node = ht->stail;
 	printf("{");
 	while (node != NULL)
@@ -215,7 +196,6 @@ void shash_table_delete(shash_table_t *ht)
 	{
 		return;
 	}
-
 	node = ht->shead;
 	while (node)
 	{
@@ -225,7 +205,6 @@ void shash_table_delete(shash_table_t *ht)
 		free(node);
 		node = temp;
 	}
-
 	free(head->array);
 	free(head);
 }
