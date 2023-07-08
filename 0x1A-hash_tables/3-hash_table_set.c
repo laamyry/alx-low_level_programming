@@ -1,12 +1,12 @@
 #include "hash_tables.h"
 /**
- * new_node - make hash node.
+ * make_node - make hash node.
  *
  * @key: the key.
  * @value: the value associated with the key.
  * Return: new node, or NULL.
  */
-hash_node_t *new_node(const char *key, const char *value)
+hash_node_t *make_node(const char *key, const char *value)
 {
 	hash_node_t *node;
 
@@ -66,7 +66,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		temp = temp->next;
 	}
-	new_node = make_hash_node(key, value);
+	new_node = make_node(key, value);
 	if (new_node == NULL)
 	{
 		return (0);
