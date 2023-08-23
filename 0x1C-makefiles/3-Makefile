@@ -12,12 +12,12 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) -c $< -o $@
 
-clear:
+clean:
 	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
-fclear: clear oclean
+fclean: clean oclean
 
-re: fclear all
+re: fclean all
