@@ -11,10 +11,10 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) -c $< -o $@
 
-clear:
+clean:
 	rm -f $(OBJ)
 
-fclear: clear
+fclean: clean
 	rm -f $(NAME)
 
-re: fclear all
+re: fclean all
